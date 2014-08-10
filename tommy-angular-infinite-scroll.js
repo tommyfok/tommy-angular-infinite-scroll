@@ -1,9 +1,10 @@
 angular.module('tommy-angular-infinite-scroll', [])
 
-.directive('tommyInfiniteScroll', function () {
+.directive('tommyInfiniteScroll', function ($timeout) {
   return {
     restrict: 'AE',
     scope: {
+      // use `&` to store value as a function body
       reachAction: '&tommyInfiniteScroll',
       noMoreAction: '=tommyInfiniteScrollDisabled'
     },
@@ -25,8 +26,6 @@ angular.module('tommy-angular-infinite-scroll', [])
 
       var checkBound = function () {
         if (!!$scope.noMoreAction) {
-          angular.element(window).off('resize', checkBound);
-          angular.element(window).off('scroll', checkBound);
           return;
         }
 
@@ -35,7 +34,8 @@ angular.module('tommy-angular-infinite-scroll', [])
         }
       };
 
-      checkBound(); // init
+      // use `$timeout` for auto $apply
+      $timeout(checkBound, 0);
       angular.element(window).on('resize', checkBound);
       angular.element(window).on('scroll', checkBound);
     }
