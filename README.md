@@ -18,5 +18,5 @@ Simple infinite scrolling for AngularJS
 </div>
 ```
 ###Note
-- When scrolling to the bottom of this element, execute `tommy-infinite-scroll`'s attribute.
+- When scrolling __to the bottom of this element__, execute `tommy-infinite-scroll`'s attribute.
 - Prevent executing `tommy-infinite-scroll`'s attribute by adding `tommy-infinite-scroll-disabled`
