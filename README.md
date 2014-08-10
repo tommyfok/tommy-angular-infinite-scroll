@@ -5,10 +5,11 @@ Simple infinite scrolling for AngularJS
 1. With Bower :
    - `bower install --save tommy-angular-infinite-scroll`
 
-   Manually :
-   - include `tommy-angular-infinite-scroll.js` after your `angular.js` file
+   Or download `tommy-angular-infinite-scroll.js` manually
 
-2. adding `tommy-angular-infinite-scroll` as a module dependency to your application
+2. include `tommy-angular-infinite-scroll.js` after your `angular.js` file
+
+3. adding `tommy-angular-infinite-scroll` as a module dependency to your application
 
 ##Useage
 ###Binding
