@@ -1,0 +1,24 @@
+{
+  "name": "tommy-angular-infinite-scroll",
+  "version": "0.1.0",
+  "authors": [
+    "tommyfok <154274174@qq.com>"
+  ],
+  "description": "<title> as an AngularJS component",
+  "main": "tommy-angular-infinite-scroll.js",
+  "keywords": [
+    "angular",
+    "infinite",
+    "scroll"
+  ],
+  "license": "WTFPL",
+  "homepage": "https://github.com/tommyfok/tommy-angular-infinite-scroll",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
