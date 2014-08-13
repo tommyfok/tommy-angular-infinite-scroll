@@ -9,7 +9,7 @@ Simple infinite scrolling for AngularJS
 
 2. include `tommy-angular-infinite-scroll.js` after your `angular.js` file
 
-3. adding `tommy-angular-infinite-scroll` as a module dependency to your application
+3. adding `tommy.infinite-scroll` as a module dependency to your application
 
 ##Useage
 ###Binding
