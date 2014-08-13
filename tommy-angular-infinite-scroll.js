@@ -1,10 +1,11 @@
-angular.module('tommy-angular-infinite-scroll', [])
+angular.module('tommy.infinite-scroll', [])
 
 .directive('tommyInfiniteScroll', function ($interval) {
   return {
     restrict: 'AE',
     scope: {
       // use `&` to store value as a function body
+      // use `@` to store value as a string
       reachAction: '&tommyInfiniteScroll',
       noMoreAction: '=tommyInfiniteScrollDisabled',
       distance: '=tommyInfiniteScrollDistance'
