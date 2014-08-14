@@ -1,6 +1,6 @@
 angular.module('tommy.infinite-scroll', [])
 
-.directive('tommyInfiniteScroll', function ($interval) {
+.directive('tommyInfiniteScroll', function ($timeout) {
   return {
     restrict: 'AE',
     scope: {
@@ -12,8 +12,10 @@ angular.module('tommy.infinite-scroll', [])
     },
     link: function ($scope, $element, $attrs) {
       var distance = angular.isNumber($scope.distance)
-                     ? $scope.distance
-                     : 0;
+                     ? $scope.distance + 1
+                     : 1;
+          win = angular.element(window);
+
       function getWindowSize () {
         return {
           width: window.innerWidth
@@ -34,16 +36,16 @@ angular.module('tommy.infinite-scroll', [])
           return;
         }
 
-        if (getElemRect().bottom - document.body.scrollTop < getWindowSize().height * (1 + distance)){
+        if (getElemRect().bottom - document.body.scrollTop < getWindowSize().height * distance){
           $scope.reachAction();
         }
       }
 
-      // use `$interval` for auto $apply
-      var timer = $interval(checkBound, 200);
+      $timeout(checkBound, 0);
+      win.on('scroll resize', checkBound);
 
       $scope.$on('$destroy', function () {
-        $interval.cancel(timer);
+        win.off('scroll resize', checkBound);
       });
     }
   };
