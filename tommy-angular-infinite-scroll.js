@@ -11,7 +11,7 @@ angular.module('tommy.infinite-scroll', [])
       distance: '=tommyInfiniteScrollDistance'
     },
     link: function ($scope, $element, $attrs) {
-      var distance = angular.isNumber($scope.distance)
+      var distance = angular.isNumber(parseInt($scope.distance))
                      ? $scope.distance + 1
                      : 1;
           win = angular.element(window);
