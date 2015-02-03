@@ -36,7 +36,7 @@ angular.module('tommy.infinite-scroll', [])
           return;
         }
 
-        if (getElemRect().bottom - document.body.scrollTop < getWindowSize().height * distance){
+        if (getElemRect().bottom < getWindowSize().height * distance){
           $scope.reachAction();
         }
       }
